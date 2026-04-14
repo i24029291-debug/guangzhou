@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Attractions | Discover Guangzhou</title>
+    <meta name="description" content="Explore the top attractions and landmarks of Guangzhou, the City of Flowers.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific styles for attractions interface */
+        .page-hero {
+            height: 100vh;
+            background-image: url('./images/4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page-hero .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .page-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            color: #f8fafc;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Redesigned Layout */
+        .showcase-container {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .showcase-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+            background: var(--bg-white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .showcase-item:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .showcase-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .showcase-item.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .showcase-image {
+            flex: 1;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .showcase-item:hover .showcase-image img {
+            transform: scale(1.05);
+        }
+
+        .showcase-content {
+            flex: 1;
+            padding: 10px 30px;
+            position: relative;
+        }
+
+        .showcase-number {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            opacity: 0.08;
+            position: absolute;
+            top: -40px;
+            left: 20px;
+            font-family: var(--font-heading);
+            user-select: none;
+            z-index: 0;
+        }
+
+        .showcase-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .showcase-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 992px) {
+
+            .showcase-item,
+            .showcase-item.reverse {
+                flex-direction: column;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            .showcase-image {
+                width: 100%;
+            }
+
+            .showcase-image img {
+                height: 300px;
+            }
+
+            .showcase-content {
+                padding: 20px;
+            }
+
+            .showcase-number {
+                top: -20px;
+                left: 10px;
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="logo">Guangzhou.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="attractions.html" style="color: var(--primary-orange);">Attractions</a></li>
+                <li><a href="cuisine.html">Food</a></li>
+                <li><a href="index.html#culture">Culture</a></li>
+                <li><a href="index.html#transport">Transport</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <h1 class="page-hero-title">Top Attractions</h1>
+            <p class="page-hero-subtitle">Discover the landmarks that define the spirit of the city.</p>
+        </div>
+    </header>
+
+    <!-- Attractions Showcase -->
+    <section class="section showcase-container">
+        <div class="container">
+            <!-- Canton Tower -->
+            <div class="showcase-item fade-in-up">
+                <div class="showcase-image">
+                    <img src="./images/a1.jpg" alt="Canton Tower">
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-number">01</div>
+                    <h3>Canton Tower</h3>
+                    <p>An iconic 600-meter landmark standing proudly by the Pearl River, offering breathtaking panoramic
+                        views of the entire metropolis. Known locally as 'Xiao Man Yao' (slim waist), its stunning
+                        architecture and vibrant night illumination make it an absolute must-visit for anyone traveling
+                        to Guangzhou.</p>
+                </div>
+            </div>
+
+            <!-- Shamian Island -->
+            <div class="showcase-item reverse fade-in-up">
+                <div class="showcase-image">
+                    <img src="./images/a2.jpg" alt="Shamian Island">
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-number">02</div>
+                    <h3>Shamian Island</h3>
+                    <p>A tranquil historical area featuring well-preserved European-style architecture from the colonial
+                        era, perfect for a leisurely stroll. The tree-lined avenues, bronze statues, and charming
+                        boutique cafes transport you to a peaceful bygone era amidst the bustling modern city.</p>
+                </div>
+            </div>
+
+            <!-- Chen Clan Academy -->
+            <div class="showcase-item fade-in-up">
+                <div class="showcase-image">
+                    <img src="./images/a3.jpg" alt="Chen Clan Ancestral Hall">
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-number">03</div>
+                    <h3>Chen Clan Academy</h3>
+                    <p>A shining masterpiece of Lingnan architecture, known worldwide for its exquisite wood carvings
+                        and traditional Chinese folk arts. Its intricate roof ridges, stone columns, and vast courtyards
+                        are an absolute marvel of ancient craftsmanship and cultural heritage.</p>
+                </div>
+            </div>
+
+            <!-- Baiyun Mountain -->
+            <div class="showcase-item reverse fade-in-up">
+                <div class="showcase-image">
+                    <img src="./images/a4.jpg" alt="Baiyun Mountain">
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-number">04</div>
+                    <h3>Baiyun Mountain</h3>
+                    <p>Known as the "First Spectacular Scene of the City," providing lush greenery, fresh air, and
+                        scenic hiking trails for nature lovers. Offering sweeping vistas over the city, it stands out as
+                        an idyllic retreat where locals and tourists alike gather to celebrate the beauty of nature.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Guangzhou.</h2>
+                    <p>Discover the vibrant capital of Guangdong, continuously blending centuries of Lingnan culture
+                        with the exciting pulse of modern China.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="attractions.html">Top Attractions</a></li>
+                        <li><a href="cuisine.html">Culinary Delights</a></li>
+                        <li><a href="index.html#culture">Lingnan Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: discover@guangzhoutourism.com</p>
+                    <p>Phone: +86 20 1234 5678</p>
+                    <p>Location: Guangzhou, Guangdong, China</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guangzhou City Culture & Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Delights | Discover Guangzhou</title>
+    <meta name="description" content="Discover the finest culinary delights of Guangzhou, from Dim Sum to Roast Meats.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero {
+            height: 100vh;
+            background-image: url('./images/s1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page-hero .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        .page-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            color: #f8fafc;
+            position: relative;
+            z-index: 1;
+        }
+
+        .food-showcase {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .food-section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .food-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .food-img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .food-card:hover .food-img {
+            transform: scale(1.08);
+        }
+
+        .food-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-orange);
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: var(--font-heading);
+            z-index: 2;
+        }
+
+        .food-info {
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .food-info h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .food-info h3 span {
+            color: var(--primary-orange);
+        }
+
+        .food-info p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="logo">Guangzhou.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="cuisine.html" style="color: var(--primary-orange);">Food</a></li>
+                <li><a href="index.html#culture">Culture</a></li>
+                <li><a href="index.html#transport">Transport</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <h1 class="page-hero-title">Culinary Delights</h1>
+            <p class="page-hero-subtitle">"Eating in Guangzhou" - Welcome to a true paradise for food lovers.</p>
+        </div>
+    </header>
+
+    <!-- Food Showcase -->
+    <section class="section food-showcase">
+        <div class="container">
+            <p class="food-section-intro fade-in-up">
+                Cantonese cuisine is one of the Eight Culinary Traditions of Chinese cuisine, known globally for its
+                emphasis on preserving the natural flavors of ingredients. From bustling morning tea houses to vibrant
+                night markets, Guangzhou offers an unforgettable gastronomic journey.
+            </p>
+
+            <div class="food-grid">
+                <!-- Dim Sum -->
+                <div class="food-card fade-in-up">
+                    <div class="food-img-wrapper">
+                        <div class="food-badge">Must Try</div>
+                        <img src="./images/c1.jpg" alt="Cantonese Dim Sum" class="food-img">
+                    </div>
+                    <div class="food-info">
+                        <h3>Cantonese <span>Dim Sum</span></h3>
+                        <p>Delicate bite-sized portions served in small steamer baskets. Enjoying Dim Sum is an
+                            essential part of the morning tradition called "Yum Cha" (drinking tea), deeply woven into
+                            the local culture.</p>
+                    </div>
+                </div>
+
+                <!-- Siu Mei -->
+                <div class="food-card fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="food-img-wrapper">
+                        <div class="food-badge">Signature</div>
+                        <img src="./images/c2.jpg" alt="Siu Mei (Roast Meats)" class="food-img">
+                    </div>
+                    <div class="food-info">
+                        <h3>Siu Mei <span>(Roast Meats)</span></h3>
+                        <p>Char siu (sweet BBQ roast pork) and roast goose with dangerously crispy skin and tender meat.
+                            It is a highly renowned staple of local dining, often served over a bed of fragrant steamed
+                            rice.</p>
+                    </div>
+                </div>
+
+                <!-- Claypot Rice -->
+                <div class="food-card fade-in-up">
+                    <div class="food-img-wrapper">
+                        <div class="food-badge">Traditional</div>
+                        <img src="./images/c3.jpg" alt="Claypot Rice" class="food-img">
+                    </div>
+                    <div class="food-info">
+                        <h3>Claypot <span>Rice</span></h3>
+                        <p>A classic winter favorite. Premium rice is cooked slowly in a traditional claypot over a
+                            charcoal stove, producing an incredibly savory, golden, and crispy crust at the bottom that
+                            locals adore.</p>
+                    </div>
+                </div>
+
+                <!-- Wonton Noodles -->
+                <div class="food-card fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="food-img-wrapper">
+                        <div class="food-badge">Classic</div>
+                        <img src="./images/c4.jpg" alt="Wonton Noodles" class="food-img">
+                    </div>
+                    <div class="food-info">
+                        <h3>Wonton <span>Noodles</span></h3>
+                        <p>Springy, thin egg noodles served in a rich, slow-simmered seafood broth featuring plump,
+                            hand-wrapped shrimp and pork wontons. A seemingly simple bowl that requires decades of
+                            culinary mastery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Guangzhou.</h2>
+                    <p>Discover the vibrant capital of Guangdong, continuously blending centuries of Lingnan culture
+                        with the exciting pulse of modern China.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="attractions.html">Top Attractions</a></li>
+                        <li><a href="cuisine.html">Culinary Delights</a></li>
+                        <li><a href="index.html#culture">Lingnan Culture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: discover@guangzhoutourism.com</p>
+                    <p>Phone: +86 20 1234 5678</p>
+                    <p>Location: Guangzhou, Guangdong, China</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guangzhou City Culture & Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
